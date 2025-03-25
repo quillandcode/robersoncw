@@ -1,80 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     
-    <!-- Import Stylesheet -->
+    <!-- Import Stylesheets -->
     <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="stylesheet" href="resources/css/project-styles.css">
 
     <!-- Import Particles.js -->
     <script src="resources/js/particle/particles.js"></script>
+    
+    <!-- Import Tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 </head>
 
 <body>
     <!-- Hero Section with Particles -->
-    <div id="hero">
-        <div id="particles-js"></div>
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="name">Christopher Roberson</span>.</h1>
-            <p>Software Developer | Problem Solver | Innovator</p>
+    <span itemscope itemtype="http://schema.org/Person" id="home">
+        <div id="hero">
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="name" itemprop="name">Christopher Roberson</span>.</h1>
+                <p><span itemprop="jobTitle">Software Engineer</span> | Problem Solver | Innovator</p>
+            </div>
         </div>
+    
+        <!-- Navigation Menu (Initially at bottom, then scrolls up) -->
+        <div class="sticky-nav footer-nav">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Main Content -->
+        <main id="main-particle-container">
+            <div id="particles-main"></div> <!-- Particle Background -->
+            
+            <section id="about" itemprop="description">
+                <h2>About Me</h2>
+                <p>With <strong>16 years of experience</strong>, I have honed my ability to tackle challenges through <strong>problem solving</strong> and innovation. <strong>Coding is not just a job</strong>—it's my passion. I thrive on creating elegant solutions and writing clean, efficient code. Beyond development, I am also a writer with <strong>published works</strong>. I see a deep correlation between writing stories and writing code—both require structure, creativity, and a clear vision. As I always say, "<strong>Every algorithm has a story, and every story has an algorithm.</strong>" I bring this mindset to every project I take on, crafting solutions that are both functional and meaningful.</p>
+    
+                <p>Currently, I'm a <strong>computer science teacher</strong>, tutor, and mentor at <strong>coding camps</strong>, helping students build foundational skills and discover the power of programming.</p>
+            </section>
+            
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="hex-grid">
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Java</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">C#</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">PHP</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Ruby on Rails</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Python</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Angular</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Spring</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">AWS</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Docker</span>
+                    </div>
+                    <div class="hex" itemscope itemtype="http://schema.org/DefinedTerm">
+                        <span itemprop="name">Kubernetes</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="title"><h2>Projects</h2></div>
+                <div class="project">
+                    <div class="project-thumbnail" data-tilt onclick="openLightbox(this)">
+                        <img src="resources/images/cox.jpg" alt="Project 1" itemprop="image">
+                    </div>
+                    <div class="project-description">
+                        <h3>Cox Automotive Front-End Development</h3>
+                        <p>As a <strong>Front-End Engineer</strong> at <strong>Cox Automotive</strong>, I contributed to the development of a <strong>custom car dealership website</strong>, focusing on <strong>responsive design, UI/UX optimization, and performance enhancements</strong>. I implemented <strong>modern styling, interactive elements, and accessibility features</strong> to create a seamless browsing experience for customers. This project demonstrates my expertise in <strong>JavaScript, CSS, front-end development, and web accessibility</strong>, ensuring high-quality, client-focused solutions tailored to industry needs.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-description">
+                        <h3 itemprop="name">Color Codes</h3>
+                        <p>Developed <strong>Color Codes</strong>, a pattern-matching game built entirely in <strong>Angular with the Ionic framework</strong>, showcasing advanced front-end development without relying on game engines like Phaser. The game features dynamic <strong>visual and audio feedback</strong>, progressively challenging players to recall and replicate sequences. Implemented <strong>responsive UI, interactive animations, and state management</strong>, ensuring smooth gameplay across devices. Upcoming enhancements include <strong>customizable themes</strong> for both visuals and sound. This project highlights my expertise in <strong>JavaScript, Angular, UI/UX design, and performance optimization</strong>—demonstrating the ability to build engaging, interactive experiences from the ground up.</p>
+                    </div>
+                    <div class="project-thumbnail" data-tilt onclick="openLightbox(this)">
+                        <img src="resources/images/ColorCodes.jpg" alt="Project 1" itemprop="image">
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project-thumbnail" data-tilt onclick="openLightbox(this)">
+                        <img src="resources/images/PantryMouse.jpg" alt="Pantry Mouse" itemprop="image">
+                    </div>
+                    <div class="project-description">
+                        <h3 itemprop="name">Pantry Mouse</h3>
+                        <p>
+                            <strong>Pantry Mouse</strong> is a <strong>home inventory management app</strong> built with <strong>Ionic</strong>, enabling users to efficiently track pantry items. By leveraging a <strong>barcode scanning feature</strong>, users can scan UPC codes with their phone's camera, retrieving product data through a <strong>third-party API</strong>. This data is processed and stored in a local <strong>SQLite database</strong>, allowing users to add items, update quantities, and monitor stock levels. The app features <strong>color-coded quantity indicators</strong> to signal when items need replenishing. Future enhancements include <strong>automated shopping list generation</strong> and <strong>one-touch integration with online retailers</strong> for seamless grocery replenishment.  
+                        </p>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <p>If you have any questions, project inquiries, or just want to connect, feel free to reach out!</p>
+                
+                <form action="https://formspree.io/f/mvgkgrbr" id="contact-form" method="post" class="contact-form">
+                    <label for="email">Your Email</label>
+                    <input name="Email" id="email" type="email" placeholder="Enter your email" required />
+                    <input type="text" id="phone-number" name="phone-number">
+                    
+                    <label for="message">Your Message</label>
+                    <textarea name="Message" id="message" placeholder="Write your message here..." required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+    
+    <!-- Lightbox for project thumbnails -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
     </div>
 
-    <!-- Navigation Menu (Initially at bottom, then scrolls up) -->
-    <div class="sticky-nav footer-nav">
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main-particle-container">
-        <div id="particles-main"></div> <!-- Particle Background -->
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>With <strong>16 years of experience</strong>, I have honed my ability to tackle challenges through <strong>problem solving</strong> and innovation. <strong>Coding is not just a job</strong>—it’s my passion. I thrive on creating elegant solutions and writing clean, efficient code.  
-        
-            Beyond development, I am also a writer with <strong>published works</strong>. I see a deep correlation between writing stories and writing code—both require structure, creativity, and a clear vision. As I always say, "<strong>Every algorithm has a story, and every story has an algorithm.</strong>" I bring this mindset to every project I take on, crafting solutions that are both functional and meaningful.</p>
-        </section>        
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="hex-grid">
-                <div class="hex"><span>Java</span></div>
-                <div class="hex"><span>C#</span></div>
-                <div class="hex"><span>PHP</span></div>
-                <div class="hex"><span>Ruby on Rails</span></div>
-                <div class="hex"><span>Python</span></div>
-                <div class="hex"><span>Angular</span></div>
-                <div class="hex"><span>Spring</span></div>
-                <div class="hex"><span>AWS</span></div>
-                <div class="hex"><span>Docker</span></div>
-                <div class="hex"><span>Kubernetes</span></div>
-            </div>
-        </section>        
-    
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project Name</h3>
-                <p>Description of the project...</p>
-            </div>
-        </section>
-    
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
-        </section>
-    </main>
 
     <!-- Import Particles.js Config -->
     <script src="resources/js/particle/app.js"></script>

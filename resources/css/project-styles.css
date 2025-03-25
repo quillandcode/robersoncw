@@ -1,0 +1,86 @@
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#projects h3 {
+    width: 100%;
+}
+
+.project {
+    background: transparent;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.project-thumbnail {
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    width: 350px;
+    max-height: 350px;
+    min-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-thumbnail img {
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+}
+
+
+.project-description {
+    width: 50%;
+}
+
+/* Lightbox Styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .project-thumbnail, .project-description {
+        width: 100%;
+    }
+}
