@@ -42,3 +42,21 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         event.preventDefault();
     }
 });
+
+function glitchEffect() {
+    const hero = document.getElementById("hero");
+
+    // Set a glitch image for a short time
+    hero.style.backgroundImage = "url('resources/images/glitch.jpg')";
+
+    // Revert back after a quick flash
+    setTimeout(() => {
+        hero.style.backgroundImage = "none";
+    }, 100 + Math.random() * 200); // Glitch lasts 100-300ms
+
+    // Schedule the next glitch at a random time
+    setTimeout(glitchEffect, 2000 + Math.random() * 5000); // 2 to 7 seconds delay
+}
+
+// Start the glitch effect
+setTimeout(glitchEffect, 3000); // Initial delay
